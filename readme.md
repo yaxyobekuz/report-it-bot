@@ -60,7 +60,7 @@ report-it-bot/
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/yaxyobekuz/report-it-bot.git
    cd report-it-bot
    ```
 
