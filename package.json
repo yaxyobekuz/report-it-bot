@@ -1,0 +1,20 @@
+{
+  "name": "report-it-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for reporting counterfeit products and violations",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "verify": "node verify-setup.js"
+  },
+  "keywords": ["telegram", "bot", "reporting", "mongodb"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
