@@ -73,6 +73,21 @@ const formatChannelReport = (report) => {
 };
 
 /**
+ * Format feedback for channel message
+ * @param {string} feedback - feedback
+ * @returns {string} Formatted channel message
+ */
+const formatChannelFeedback = (feedback, from) => {
+  let text = "✍️ Yangi fikr-mulohaza\n\n";
+
+  text += `👤 Foydalanuvchi: ${from.first_name}`;
+  if (from.username) text += `\n🆔 Username: @${from.username}`;
+
+  text += `\n📃 Fikr-mulohaza: ${feedback}`;
+  return text;
+};
+
+/**
  * Get region name by ID in specified language
  * @param {string} regionId - Region ID
  * @param {string} language - Language code
@@ -104,4 +119,5 @@ module.exports = {
   getRegionName,
   getDistrictName,
   formatChannelReport,
+  formatChannelFeedback,
 };
