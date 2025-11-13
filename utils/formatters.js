@@ -1,6 +1,7 @@
-const translations = require("../data/translations");
+// Data
 const regions = require("../data/regions");
 const districts = require("../data/districts");
+const translations = require("../data/translations");
 
 /**
  * Get translation for a key in user's language
@@ -45,27 +46,23 @@ const formatReport = (report, language = "uz_latn") => {
  * @param {Object} report - Report object
  * @returns {string} Formatted channel message
  */
-const formatChannelReport = (report) => {
+const formatChannelReport = (report, user) => {
   let text = "🚨 Yangi ariza\n\n";
   text += `📅 Sana: ${new Date(report.createdAt).toLocaleString()}\n`;
   text += `📍 Viloyat: ${report.region}\n`;
   text += `🏘 Tuman/Shahar: ${report.district}\n`;
-  text += `🗺 Joylashuv: ${report.location.latitude}, ${report.location.longitude}\n\n`;
+  text += `🗺 Joylashuv: https://www.google.com/maps?q=${report.location.latitude},${report.location.longitude}\n\n`;
 
-  if (report.businessEntity) {
-    text += `🏢 Tashkilot: ${report.businessEntity}\n`;
-  }
-  if (report.shopName) {
-    text += `🏪 Do'kon nomi: ${report.shopName}\n`;
-  }
-  if (report.shopAddress) {
-    text += `📬 Do'kon manzili: ${report.shopAddress}\n`;
-  }
+  text += `🏢 Tashkilot: ${report.businessEntity || "Kiritilmadi"}\n`;
+  text += `🏪 Do'kon nomi: ${report.shopName || "Kiritilmadi"}\n`;
+  text += `📬 Do'kon manzili: ${report.shopAddress || "Kiritilmadi"}\n`;
 
   text += `\n📝 Tavsif: ${report.description}\n\n`;
   text += `👤 Arizachi:\n`;
   text += `   Ism: ${report.applicant.firstName} ${report.applicant.lastName} ${report.applicant.fatherName}\n`;
-  text += `   Telefon: ${report.applicant.phoneNumber}\n\n`;
+  text += `   Telefon: ${report.applicant.phoneNumber}\n`;
+  text += `   Tg ism: ${user.first_name}\n`;
+  text += `   Tg username: @${user.username}\n\n`;
   text += `📎 Media Fayllar: ${report.mediaFiles.length}ta\n`;
   text += `🆔 Ariza ID: ${report._id}`;
 
