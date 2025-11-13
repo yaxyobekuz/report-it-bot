@@ -27,11 +27,11 @@ const handleStart = async (bot, msg) => {
     setLanguage(chatId, user.language);
 
     const language = getLanguage(chatId);
-    const welcomeText = translate("welcome", language);
 
-    // Language selection
+    // Send welcome message with main menu
+    const welcomeText = translate("welcome", language);
     await bot.sendMessage(chatId, welcomeText, {
-      reply_markup: createMainMenuKeyboard(),
+      reply_markup: createMainMenuKeyboard(language),
     });
   } catch (error) {
     console.error("Error in handleStart:", error);
