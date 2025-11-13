@@ -24,10 +24,10 @@ const translations = {
     ru: "Контрафактные товары ⚠️",
   },
   reportViolation: {
-    uz_latn: "Buzilish aniqlandi 🔴",
-    uz_cyrl: "Бузилиш аникланди 🔴",
-    en: "Violation Detected 🔴",
-    ru: "Обнаружено нарушение 🔴",
+    uz_latn: "Ariza qoldirish 🔴",
+    uz_cyrl: "Ариза қолдириш 🔴",
+    en: "Submit Report 🔴",
+    ru: "Подать заявку 🔴",
   },
   myReports: {
     uz_latn: "Mening arizalarim 🗃",
