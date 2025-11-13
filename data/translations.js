@@ -57,6 +57,14 @@ const translations = {
     en: "Welcome! This bot helps you report counterfeit products. 👋",
     ru: "Добро пожаловать! Этот бот поможет вам сообщить о контрафактной продукции. 👋",
   },
+
+  // Language
+  selectLanguageMessage: {
+    uz_latn: "Iltimos, tilni tanlang:",
+    uz_cyrl: "Илтимос, тилни танланг:",
+    en: "Please select a language:",
+    ru: "Пожалуйста, выберите язык:",
+  },
   languageChanged: {
     uz_latn: "Til muvaffaqiyatli o'zgartirildi! ✅",
     uz_cyrl: "Тил муваффақиятли ўзгартирилди! ✅",
