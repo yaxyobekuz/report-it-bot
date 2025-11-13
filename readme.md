@@ -82,16 +82,6 @@ report-it-bot/
    NODE_ENV=development
    ```
 
-### Getting Your Channel ID
-
-1. Create a private Telegram channel
-2. Add your bot as an administrator to the channel
-3. Add [@YourBot](https://t.me/YourBot) to your channel
-4. Send a message to the channel
-5. Copy the `chat.id` value (it will look like `-100XXXXXXXXXX`)
-6. Remove @YourBot from the channel
-7. Use this ID in your `.env` file
-
 ### Running the Bot
 
 **Development mode**:
@@ -202,58 +192,13 @@ All handlers include try-catch blocks and log errors to console. Users receive f
 
 ### Session Management
 
-User sessions are stored in memory using a Map. For production deployment with multiple instances, consider using Redis or another persistent session store.
-
-## 📦 Deployment
-
-### Using PM2 (Recommended)
-
-1. **Install PM2**:
-   ```bash
-   npm install -g pm2
-   ```
-
-2. **Start the bot**:
-   ```bash
-   pm2 start index.js --name report-bot
-   ```
-
-3. **Configure auto-restart**:
-   ```bash
-   pm2 startup
-   pm2 save
-   ```
-
-### Using Docker
-
-Create a `Dockerfile`:
-
-```dockerfile
-FROM node:16-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
-CMD ["node", "index.js"]
-```
-
-Build and run:
-```bash
-docker build -t report-bot .
-docker run -d --env-file .env report-bot
-```
+User sessions are stored in memory using a Map.
 
 ## 🔒 Security Best Practices
 
 - Never commit `.env` file to version control
 - Use environment variables for all sensitive data
 - Validate all user inputs
-- Implement rate limiting for production
-- Use HTTPS for webhook mode (optional)
 - Regularly update dependencies
 
 ## 📊 Monitoring
@@ -271,13 +216,6 @@ Monitor MongoDB performance:
 - Index on `telegramId` for fast user lookups
 - Index on `status` for report filtering
 - Use `.lean()` for read-only queries
-
-## 👥 Support
-
-For issues or questions:
-1. Check existing documentation
-2. Search for similar issues
-3. Create a new issue with detailed information
 
 ## 🙏 Acknowledgments
 
