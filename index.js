@@ -101,9 +101,6 @@ bot.on("message", async (msg) => {
   const session = getSession(chatId);
   const language = getLanguage(chatId);
 
-  console.log(session);
-  
-
   const step = session.step;
 
   try {
