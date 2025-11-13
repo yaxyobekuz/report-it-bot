@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node index.js",
-    "verify": "node verify-setup.js"
+    "dev": "node index.js"
   },
-  "keywords": ["telegram", "bot", "reporting", "mongodb"],
+  "keywords": [
+    "telegram",
+    "bot",
+    "reporting",
+    "mongodb"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
